@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'widgets/percent_card.dart';
+import 'modules/project_colors.dart';
 
 class LoanAmountScreen extends StatefulWidget {
   const LoanAmountScreen({Key? key, required this.title}) : super(key: key);
@@ -24,10 +26,10 @@ class LoanAmountState extends State<LoanAmountScreen> {
         appBar: AppBar(
           centerTitle: true,
           elevation: 0,
-          backgroundColor: const Color.fromRGBO(28, 73, 47, 1),
+          backgroundColor: ProjectColors.darkGreen,
           title: const Text('Назад'),
         ),
-        backgroundColor: const Color.fromRGBO(28, 73, 47, 1),
+        backgroundColor: ProjectColors.darkGreen,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
@@ -51,8 +53,8 @@ class LoanAmountState extends State<LoanAmountScreen> {
                       child: Center(
                         child: Text(
                           _currentSliderValue.round().toString(),
-                          style: const TextStyle(
-                              color: Color.fromRGBO(255, 204, 0, 1),
+                          style: TextStyle(
+                              color: ProjectColors.yellow,
                               fontSize: 14),
                         ),
                       ),
@@ -60,7 +62,7 @@ class LoanAmountState extends State<LoanAmountScreen> {
                   ],
                 ),
                 Slider(
-                  activeColor: const Color.fromRGBO(255, 204, 0, 1),
+                  activeColor: ProjectColors.yellow,
                   inactiveColor: Colors.white,
                   value: _currentSliderValue,
                   max: 100000,
@@ -76,6 +78,45 @@ class LoanAmountState extends State<LoanAmountScreen> {
                   'Проценты',
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 28),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Wrap(
+                        spacing: 16,
+                        children: [
+                          PercentCard('0% для новых клиентов'),
+                          PercentCard('Более 0%\n'),
+                          PercentCard('С плохой кредитной историей'),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(22, 32, 22, 0),
+                  child: SizedBox(
+                    height: 48,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(100.0))),
+                        backgroundColor: MaterialStateProperty.all(
+                            ProjectColors.yellow),
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Оформить',
+                        style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

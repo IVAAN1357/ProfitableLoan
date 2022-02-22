@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'loan_amount.dart';
 import 'widgets/input_field.dart';
+import 'modules/project_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         statusBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
-        backgroundColor: const Color.fromRGBO(28, 73, 47, 1),
+        backgroundColor: ProjectColors.darkGreen,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 84, 8, 8),
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 24.0,
                       child: Checkbox(
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        checkColor: const Color.fromRGBO(28, 73, 47, 1),
+                        checkColor: ProjectColors.darkGreen,
                         fillColor: MaterialStateProperty.all(Colors.white),
                         shape: const CircleBorder(),
                         value: value,
@@ -101,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       borderRadius:
                                           BorderRadius.circular(100.0))),
                           backgroundColor: MaterialStateProperty.all(
-                              const Color.fromRGBO(255, 204, 0, 1)),
+                              ProjectColors.yellow),
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
@@ -110,8 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                         child: const Text(
                           'Отправить',
-                          style: TextStyle(color: Colors.black, fontSize: 20),
-                        )),
+                          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
+                        ),
+                    ),
                   ),
                 )
               ],
