@@ -54,8 +54,7 @@ class LoanAmountState extends State<LoanAmountScreen> {
                         child: Text(
                           _currentSliderValue.round().toString(),
                           style: TextStyle(
-                              color: ProjectColors.yellow,
-                              fontSize: 14),
+                              color: ProjectColors.yellow, fontSize: 14),
                         ),
                       ),
                     )
@@ -78,21 +77,21 @@ class LoanAmountState extends State<LoanAmountScreen> {
                   'Проценты',
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 28),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Wrap(
-                        spacing: 16,
-                        children: [
-                          PercentCard('0% для новых клиентов'),
-                          PercentCard('Более 0%\n'),
-                          PercentCard('С плохой кредитной историей'),
-                        ],
-                      ),
-                    ],
-                  ),
+                const SizedBox(height: 28),
+                Row(
+                  children: [
+                    Expanded(
+                      child: PercentCard('0% для новых клиентов'),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: PercentCard('Более 0%\n'),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: PercentCard('С плохой кредитной историей'),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(22, 32, 22, 0),
@@ -106,13 +105,16 @@ class LoanAmountState extends State<LoanAmountScreen> {
                                 RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.circular(100.0))),
-                        backgroundColor: MaterialStateProperty.all(
-                            ProjectColors.yellow),
+                        backgroundColor:
+                            MaterialStateProperty.all(ProjectColors.yellow),
                       ),
                       onPressed: () {},
                       child: const Text(
                         'Оформить',
-                        style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),

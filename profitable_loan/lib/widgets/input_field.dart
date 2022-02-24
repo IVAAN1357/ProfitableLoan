@@ -4,7 +4,7 @@ class InputField extends StatelessWidget {
   InputField(this._name, {Key? key, bool this.isPassword = false})
       : super(key: key);
   var _name;
-  var isPassword;
+  bool isPassword;
 
   @override
   Widget build(BuildContext context) {
