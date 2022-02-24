@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: MaterialColor(900, ProjectColors.colors),
       ),
       home: const MyHomePage(title: 'Hi'),
     );
@@ -51,9 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: ProjectColors.darkGreen,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 84, 8, 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: const EdgeInsets.fromLTRB(8, 84, 8, 0),
+            child: ListView(
+
               children: [
                 InputField('ФИО'),
                 InputField('Телефон'),

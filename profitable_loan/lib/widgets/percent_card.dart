@@ -19,7 +19,7 @@ class _PercentCardState extends State<PercentCard> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          isPressed = true;
+          isPressed = !isPressed;
         });
       },
       child: Container(
@@ -37,12 +37,8 @@ class _PercentCardState extends State<PercentCard> {
             children: [
               Visibility(
                 visible: isPressed,
-                child: SizedBox(
-                  height: 16,
-                  width: 16,
-                  child: SvgPicture.asset(
-                    'lib/assets/ok.svg',
-                  ),
+                child: SvgPicture.asset(
+                  'lib/assets/ok.svg',
                 ),
               ),
               Text(
