@@ -28,7 +28,27 @@ class TimerScreen extends StatelessWidget {
                 'Идет обработка заявки, просьба подождать',
                 style: TextStyle(color: Colors.white, fontSize: 14),
               ),
-
+              SizedBox(
+                height: 32,
+              ),
+              Container(
+                height: 180,
+                width: 180,
+                decoration: BoxDecoration(
+                  color: ProjectColors.gray,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    '5:45',
+                    style: TextStyle(
+                      fontSize: 50,
+                    color:  ProjectColors.yellow,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: AppBar().preferredSize.height,)
             ],
           ),
         ),
