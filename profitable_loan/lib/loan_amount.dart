@@ -28,7 +28,14 @@ class LoanAmountState extends State<LoanAmountScreen> {
           centerTitle: true,
           elevation: 0,
           backgroundColor: ProjectColors.darkGreen,
-          title: const Text('Назад'),
+          title: const Text(
+            'Назад',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontFamily: 'Play',
+              fontSize: 14,
+            ),
+          ),
         ),
         backgroundColor: ProjectColors.darkGreen,
         body: Padding(
@@ -53,8 +60,7 @@ class LoanAmountState extends State<LoanAmountScreen> {
                     child: Center(
                       child: Text(
                         _currentSliderValue.round().toString(),
-                        style: TextStyle(
-                            color: ProjectColors.yellow, fontSize: 14),
+                        style: TextStyle(color: ProjectColors.yellow, fontSize: 14),
                       ),
                     ),
                   )
@@ -99,25 +105,22 @@ class LoanAmountState extends State<LoanAmountScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      shape:
-                          MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(100.0))),
-                      backgroundColor:
-                          MaterialStateProperty.all(ProjectColors.yellow),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.0))),
+                      backgroundColor: MaterialStateProperty.all(ProjectColors.yellow),
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>
-                          const TimerScreen()));
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) => const TimerScreen()));
                     },
                     child: const Text(
                       'Оформить',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700),
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontFamily: 'Play',
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),

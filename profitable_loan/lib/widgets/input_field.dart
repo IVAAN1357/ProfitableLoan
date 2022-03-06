@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
-  InputField(this._name, {Key? key, bool this.isPassword = false})
-      : super(key: key);
-  var _name;
+  InputField(this._name, {Key? key, this.isPassword = false}) : super(key: key);
+  final String _name;
   bool isPassword;
 
   @override
@@ -11,7 +10,11 @@ class InputField extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
         _name,
-        style: const TextStyle(color: Colors.white, fontSize: 11),
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 11,
+          fontFamily: 'Gilroy',
+        ),
       ),
       Container(
         margin: const EdgeInsets.only(top: 4, bottom: 16),
@@ -21,11 +24,11 @@ class InputField extends StatelessWidget {
           borderRadius: BorderRadius.circular(3),
         ),
         child: Padding(
-          padding: EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(4.0),
           child: TextField(
               cursorColor: Colors.black,
               obscureText: isPassword,
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
               decoration: const InputDecoration(
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,

@@ -53,7 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 84, 8, 0),
             child: ListView(
-
               children: [
                 InputField('ФИО'),
                 InputField('Телефон'),
@@ -70,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Checkbox(
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         checkColor: ProjectColors.darkGreen,
-                        fillColor: MaterialStateProperty.all(Colors.white),
+                        fillColor: MaterialStateProperty.all(ProjectColors.yellow),
                         shape: const CircleBorder(),
                         value: value,
                         onChanged: (bool? value) {
@@ -84,7 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: EdgeInsets.only(left: 8),
                       child: Text(
                         'Я согласен с политикой конфиденциальности',
-                        style: TextStyle(color: Colors.white, fontSize: 11),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontFamily: 'Gilroy',
+                        ),
                       ),
                     ),
                   ],
@@ -95,24 +98,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 48,
                     width: double.infinity,
                     child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(100.0))),
-                          backgroundColor: MaterialStateProperty.all(
-                              ProjectColors.yellow),
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.0))),
+                        backgroundColor: MaterialStateProperty.all(ProjectColors.yellow),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const LoanAmountScreen(title: 'Loan')));
+                      },
+                      child: const Text(
+                        'Отправить',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
                         ),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                                  const LoanAmountScreen(title: 'Loan')));
-                        },
-                        child: const Text(
-                          'Отправить',
-                          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
-                        ),
+                      ),
                     ),
                   ),
                 )

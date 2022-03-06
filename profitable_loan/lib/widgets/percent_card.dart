@@ -38,7 +38,7 @@ class _PercentCardState extends State<PercentCard> {
               Visibility(
                 visible: isPressed,
                 child: SvgPicture.asset(
-                  'lib/assets/ok.svg',
+                  'assets/ok.svg',
                 ),
               ),
               Text(
@@ -46,6 +46,8 @@ class _PercentCardState extends State<PercentCard> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: isPressed ? ProjectColors.yellow : const Color.fromRGBO(74, 74, 74, 1),
+                  fontFamily: 'Gilroy',
+                  fontWeight: isPressed ? FontWeight.w500 : FontWeight.w700,
                 ),
               ),
             ],
